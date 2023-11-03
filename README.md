@@ -22,6 +22,15 @@ Para realizar la comparación encargada por la compañía fue necesario acceder 
 
 Nuestro siguiente paso fue la recopilación del artista, album, sello musical, estado del disco, estado de la funda, precio, gastos de envio y precio final de los últimos 10.000 items registrados en la tienda online. Para la recopilación de estos datos se ha utilizado el notebook '1_scraping'. El procedimiento ha consistido en recopilar los datos de 250 en 250 y por cada iteración enviar los resultados a la recien creada base de datos sonic_harbor en MongoDB.
 
+<details>
+<summary>Diagráma</summary>
+<br>
+
+Diagráma del proceso de recogida de datos 
+![diagrama](https://github.com/jvr0/SonicHarbor/blob/main/img/Extracción.png)
+
+</details>
+
 ## III. Spotify API <a name="api"></a>
 
 
