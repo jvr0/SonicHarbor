@@ -34,8 +34,9 @@ Diagráma del proceso de recogida de datos
 ## III. Spotify API <a name="api"></a>
 
 
-# 2. Limpieza <a name="limpieza"></a>
+# 2. Transformación <a name="limpieza"></a>
 The first paragraph text
 
-# 3. Análisis <a name="analisis"></a>
-The second paragraph text
+# 3. Análisis y conclusiones <a name="analisis"></a>
+
+

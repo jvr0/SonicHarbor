@@ -9,3 +9,5 @@ Driver/
 __pycache__/
 
 Cookies/
+
+*.env
