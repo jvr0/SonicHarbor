@@ -1,0 +1,9 @@
+*.DS_store
+
+*.ipynb_checkpoints
+
+*.log
+
+Driver/
+
+__pycache__/
