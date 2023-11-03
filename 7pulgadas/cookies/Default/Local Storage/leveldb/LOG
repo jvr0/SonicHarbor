@@ -1,0 +1,6 @@
+2023/11/02-20:17:20.243 2f03 Reusing MANIFEST /Users/joaquin/Developer/SonicHarbor/7pulgadas/cookies/Default/Local Storage/leveldb/MANIFEST-000001
+2023/11/02-20:17:20.246 2f03 Recovering log #15
+2023/11/02-20:17:20.247 2f03 Reusing old log /Users/joaquin/Developer/SonicHarbor/7pulgadas/cookies/Default/Local Storage/leveldb/000015.log 
+2023/11/02-20:19:34.321 2f03 Level-0 table #20: started
+2023/11/02-20:19:34.345 2f03 Level-0 table #20: 20860 bytes OK
+2023/11/02-20:19:34.385 2f03 Delete type=0 #15
