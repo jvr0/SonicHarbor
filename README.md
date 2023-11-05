@@ -113,7 +113,7 @@ def price(driver):
 </details>
 
 <details>
-<summary>Desglose</summary>
+<summary>Función Next</summary>
 <br>
 
 ```
