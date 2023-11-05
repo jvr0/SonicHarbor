@@ -34,9 +34,46 @@ Diagráma del proceso de recogida de datos
 
 Una vez se recogieron los datos de la revista Rolling Stone y del inventario de El Ártico Discos se decidió enriquecer estos últimos añadiendo el nombre y rango de las canciones dentro de cada album registrado. Para ello se ha utilizado la API musical Deezer. Aplicando una función previamente construida al data frame exportado de nuestra nueva base de datos en MongoDB se recogieron estos nuevos datos para posteriormente añadirlos al registro del inventario. Tras el enriquecimiento se realiza la actualización de la base de datos.
 
+<details>
+<summary>Diagráma</summary>
+<br>
+
+Función de extracción de datos de Deezer API
+```
+def get_rank(album_name):
+    time.sleep(0.3)
+    url = f'https://api.deezer.com/search?q=album:"{album_name}"'
+    dictio = {} 
+
+    res = req.get(url)
+    if res.status_code == 200:
+        try:
+            for i in res.json()['data']:
+                track = i['title']
+                rank = i['rank']
+    
+                dictio[track] = rank
+        except:
+            return None
+    else:
+        return None
+    return dictio
+```
+
+</details>
+
 # 2. Análisis y conclusiones <a name="analisis"></a>
 
-Finalmente, con los datos preparados, procedemos a la comparación requerida por el cliente. Observamos que de los últimos 10.000 items publicados () de ellos pertenecen a la lista de los mejores 500 albumes de la revista Rolling Stone. 
+Finalmente, con los datos preparados, procedemos a la comparación requerida por el cliente. Observamos que de los últimos 10.000 items publicados 25 de ellos pertenecen a la lista de los mejores 500 albumes de la revista Rolling Stone. 
 
-PRESENTACIÓN DEL ANÁLISIS DE ESTOS ITEMS.
+Cómo curiosidad vemos que el precio medio de estos items es de 15.43 euros. También queda registrado que la mayoría de albumes son de Rock, 18 de ellos. El 64% de los items y el 92% de las fundas se encuentran en una condición excelente (Near Mint (NM or M-)). Además, éxiste un producto Mint (M), del cual se podría revisar el precio.
 
+A continuación dejamos el desglose del análisis de los precios.
+
+<details>
+<summary>Diagráma</summary>
+<br>
+
+![desglose](https://github.com/jvr0/SonicHarbor/blob/main/img/price.png)
+
+</details>
