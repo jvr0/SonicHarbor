@@ -2,13 +2,13 @@
 
 La compañía [El Ártico Discos](https://www.discogs.com/es/seller/elarticodiscos/profile "El Ártico Discos"). nos ha encargado el siguiente proyecto. Desean una recolección de los últimos 10.000 artículos presentados a la venta en la plataforma Discogs. El motivo de este encargo han sido una serie de artículos, los cuales, presentan el incremento de las ventas de aquellos albumes musicales que se presentan en 'The 500 Greatest Albums of All Time' de la revista Rolling Stone. Quieren que revisemos su inventario y comprobemos cuantos de estos mejores 500 albumes tienen a la venta.
 
-![portada](https://github.com/jvr0/SonicHarbor/blob/main/img/SonicHarbor.png)
+aqui la portada
 
 #### Table of contents
 1. [Recopilación](#recopilacion)
     1. [500 Greates Albums](#greatest)
     2. [El Ártico Discos](#artico)
-    3. [Spotify Api](#api)
+    3. [Deezer Api](#api)
 2. [Limpieza](#limpieza)
 3. [Análisis](#analisis)
 
@@ -31,11 +31,13 @@ Diagráma del proceso de recogida de datos
 
 </details>
 
-## III. Spotify API <a name="api"></a>
+## III. Deezer API <a name="api"></a>
 
+Una vez se recogieron los datos de la revista Rolling Stone y del inventario de El Ártico Discos se decidió enriquecer estos últimos añadiendo el nombre y rango de las canciones dentro de cada album registrado. Para ello se ha utilizado la API musical Deezer. Aplicando una función previamente construida al data frame exportado de nuestra nueva base de datos en MongoDB se recogieron estos nuevos datos para posteriormente añadirlos al registro del inventario.
 
 # 2. Transformación <a name="limpieza"></a>
-The first paragraph text
+
+
 
 # 3. Análisis y conclusiones <a name="analisis"></a>
 
