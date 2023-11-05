@@ -125,40 +125,11 @@ def next_page(driver):
     next_button = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'pagination_next')))
     next_button.click()
 ```
-
-<details>
     
 ## III. Deezer API <a name="api"></a>
 
 Una vez se recogieron los datos de la revista Rolling Stone y del inventario de El Ártico Discos se decidió enriquecer estos últimos añadiendo el nombre y rango de las canciones dentro de cada album registrado. Para ello se ha utilizado la API musical Deezer. Aplicando una función previamente construida al data frame exportado de nuestra nueva base de datos en MongoDB se recogieron estos nuevos datos para posteriormente añadirlos al registro del inventario. Tras el enriquecimiento se realiza la actualización de la base de datos.
 
-<details>
-<summary>Función</summary>
-<br>
-
-Función de extracción de datos de Deezer API
-```
-def get_rank(album_name):
-    time.sleep(0.3)
-    url = f'https://api.deezer.com/search?q=album:"{album_name}"'
-    dictio = {} 
-
-    res = req.get(url)
-    if res.status_code == 200:
-        try:
-            for i in res.json()['data']:
-                track = i['title']
-                rank = i['rank']
-    
-                dictio[track] = rank
-        except:
-            return None
-    else:
-        return None
-    return dictio
-```
-
-</details>
 
 # 2. Análisis y conclusiones <a name="analisis"></a>
 
