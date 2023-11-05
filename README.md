@@ -2,15 +2,14 @@
 
 La compañía [El Ártico Discos](https://www.discogs.com/es/seller/elarticodiscos/profile "El Ártico Discos"). nos ha encargado el siguiente proyecto. Desean una recolección de los últimos 10.000 artículos presentados a la venta en la plataforma Discogs. El motivo de este encargo han sido una serie de artículos, los cuales, presentan el incremento de las ventas de aquellos albumes musicales que se presentan en 'The 500 Greatest Albums of All Time' de la revista Rolling Stone. Quieren que revisemos su inventario y comprobemos cuantos de estos mejores 500 albumes tienen a la venta.
 
-aqui la portada
+![portada](https://github.com/jvr0/SonicHarbor/blob/main/img/SonicHarbor.png)
 
 #### Table of contents
 1. [Recopilación](#recopilacion)
     1. [500 Greates Albums](#greatest)
     2. [El Ártico Discos](#artico)
     3. [Deezer Api](#api)
-2. [Limpieza](#limpieza)
-3. [Análisis](#analisis)
+2. [Análisis](#analisis)
 
 # 1. Recopilación <a name="recopilacion"></a>
 
@@ -33,12 +32,11 @@ Diagráma del proceso de recogida de datos
 
 ## III. Deezer API <a name="api"></a>
 
-Una vez se recogieron los datos de la revista Rolling Stone y del inventario de El Ártico Discos se decidió enriquecer estos últimos añadiendo el nombre y rango de las canciones dentro de cada album registrado. Para ello se ha utilizado la API musical Deezer. Aplicando una función previamente construida al data frame exportado de nuestra nueva base de datos en MongoDB se recogieron estos nuevos datos para posteriormente añadirlos al registro del inventario.
+Una vez se recogieron los datos de la revista Rolling Stone y del inventario de El Ártico Discos se decidió enriquecer estos últimos añadiendo el nombre y rango de las canciones dentro de cada album registrado. Para ello se ha utilizado la API musical Deezer. Aplicando una función previamente construida al data frame exportado de nuestra nueva base de datos en MongoDB se recogieron estos nuevos datos para posteriormente añadirlos al registro del inventario. Tras el enriquecimiento se realiza la actualización de la base de datos.
 
-# 2. Transformación <a name="limpieza"></a>
+# 2. Análisis y conclusiones <a name="analisis"></a>
 
+Finalmente, con los datos preparados, procedemos a la comparación requerida por el cliente. Observamos que de los últimos 10.000 items publicados () de ellos pertenecen a la lista de los mejores 500 albumes de la revista Rolling Stone. 
 
-
-# 3. Análisis y conclusiones <a name="analisis"></a>
-
+PRESENTACIÓN DEL ANÁLISIS DE ESTOS ITEMS.
 
