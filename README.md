@@ -126,6 +126,9 @@ def next_page(driver):
     next_button.click()
 ```
     
+</details>
+
+    
 ## III. Deezer API <a name="api"></a>
 
 Una vez se recogieron los datos de la revista Rolling Stone y del inventario de El Ártico Discos se decidió enriquecer estos últimos añadiendo el nombre y rango de las canciones dentro de cada album registrado. Para ello se ha utilizado la API musical Deezer. Aplicando una función previamente construida al data frame exportado de nuestra nueva base de datos en MongoDB se recogieron estos nuevos datos para posteriormente añadirlos al registro del inventario. Tras el enriquecimiento se realiza la actualización de la base de datos.
