@@ -30,12 +30,94 @@ Diagráma del proceso de recogida de datos
 
 </details>
 
+<details>
+<summary>Función Items</summary>
+<br>
+
+```
+def item(driver):
+    
+    items = driver.find_elements(By.CLASS_NAME, 'item_description')
+
+    item_description = []
+
+    try:
+
+        for i in items:
+
+            temp = []
+
+            name = i.find_element(By.CLASS_NAME, 'item_description_title').text.split('-')[0][:-1]
+            temp.append(name)
+
+            album = i.find_element(By.CLASS_NAME, 'item_description_title').text.split('-')[1].split('(')[0]
+            temp.append(album[1:-1])
+
+            label = i.find_element(By.CLASS_NAME, 'hide_mobile.label_and_cat').text.split('\n')[0].split(':')[1]
+            temp.append(label)
+
+            item_condition = i.find_element(By.CSS_SELECTOR, 'td.item_description > p.item_condition > span:nth-child(3)').text
+            temp.append(item_condition)
+
+            sleeve_condition = i.find_element(By.CLASS_NAME, 'item_sleeve_condition').text
+            temp.append(sleeve_condition)
+
+            item_description.append(temp)
+
+    except:
+        print('no se pudo, amigo...')
+        
+    return item_description
+```
+    
+</details>
+
+<details>
+<summary>Función Price</summary>
+<br>
+
+```
+def price(driver):
+
+    prices = driver.find_elements(By.CLASS_NAME, 'item_price.hide_mobile')
+
+    price_description = []
+
+    for i in prices:
+
+        temp = []
+
+        try:
+            price = i.find_element(By.CLASS_NAME, 'price').text.split('€')[1].replace(',','.')
+            temp.append(float(price))
+        except:
+            temp.append(0)
+
+        try:
+            ship = i.find_element(By.CLASS_NAME, 'hide_mobile.item_shipping').text.split(' ')[0].split('€')[1].replace(',','.')
+            temp.append(float(ship))
+        except:
+            temp.append(0)
+
+        try:
+            final = i.find_element(By.CLASS_NAME, 'converted_price').text.split(' ')[0][1:].replace(',','.')
+            temp.append(float(final))
+        except:
+            temp.append(0)
+
+        price_description.append(temp)
+
+    return price_description
+```
+
+</details>
+
 ## III. Deezer API <a name="api"></a>
 
 Una vez se recogieron los datos de la revista Rolling Stone y del inventario de El Ártico Discos se decidió enriquecer estos últimos añadiendo el nombre y rango de las canciones dentro de cada album registrado. Para ello se ha utilizado la API musical Deezer. Aplicando una función previamente construida al data frame exportado de nuestra nueva base de datos en MongoDB se recogieron estos nuevos datos para posteriormente añadirlos al registro del inventario. Tras el enriquecimiento se realiza la actualización de la base de datos.
 
 <details>
-<summary>Diagráma</summary>
+<summary>Función</summary>
 <br>
 
 Función de extracción de datos de Deezer API
@@ -71,7 +153,7 @@ Cómo curiosidad vemos que el precio medio de estos items es de 15.43 euros. Tam
 A continuación dejamos el desglose del análisis de los precios.
 
 <details>
-<summary>Diagráma</summary>
+<summary>Desglose</summary>
 <br>
 
 ![desglose](https://github.com/jvr0/SonicHarbor/blob/main/img/price.png)
