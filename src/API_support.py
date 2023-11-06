@@ -1,6 +1,6 @@
-# Las siguientes funciones han sido planteadas para la recolección de datos de la API Spotify.
-# Las utilizaremos para iterar a través de los datos recolectados en el scrapeo de El Ártico Discos
-# Con ellas se pretende enriquecer la información ya obtenida.
+# La siguiente función es utilizada para la recolección de datos de la API Deezer. 
+# Entra el nombre de un album (el cual se ha recogido durante el scrapeo) y sale un diccionario.
+# El diccionario contiene el nombre de las canciones del album como keys y la puntuación cómo valor.
 import requests as req
 import time
 

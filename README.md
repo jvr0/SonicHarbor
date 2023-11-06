@@ -34,7 +34,7 @@ Diagráma del proceso de recogida de datos
 <summary>Función Items</summary>
 <br>
 
-```
+```python
 def item(driver):
     
     items = driver.find_elements(By.CLASS_NAME, 'item_description')
@@ -76,7 +76,7 @@ def item(driver):
 <summary>Función Price</summary>
 <br>
 
-```
+```python
 def price(driver):
 
     prices = driver.find_elements(By.CLASS_NAME, 'item_price.hide_mobile')
@@ -116,7 +116,7 @@ def price(driver):
 <summary>Función Next</summary>
 <br>
 
-```
+```python
 def next_page(driver):
 
     driver.execute_script("window.scrollBy(0, 500);")
@@ -148,4 +148,58 @@ A continuación dejamos el desglose del análisis de los precios.
 
 ![desglose](https://github.com/jvr0/SonicHarbor/blob/main/img/price.png)
 
+</details>
+
+##### Mongo Query
+A mayores del análisis realizado en el cuarto notebook se ha creado un quinto archivo con algunas queries que nuestro cliente podría utilizar en la nueva base de datos de MongoDB. A continuación se presentan:
+
+<details>
+<summary>10 items más caros del inventario con precio final superior a 50</summary>
+<br>
+```
+query = {'final_price': {'$gte':70}}
+
+select = {'_id':False, 'album': 1, 'final_price':1}
+
+list(inven.find(query,select).limit(10).sort('final_price', -1))
+```
+</details>
+
+<details>
+<summary>Albums a la venta de los beattles ordenados por precio</summary>
+<br>
+```
+query = {'author': 'The Beatles'}
+
+select = {'_id':False, 'author': 1, 'album':1}
+
+list(inven.find(query,select).sort('final_price', -1))
+```
+</details>
+
+<details>
+<summary>Aquellos articulos sin gasto de envió e item condition near mint, busqueda limitada a los 5 más caros</summary>
+<br>
+```
+query = {'ship_price': 0,
+         'item_condition': 'Near Mint (NM or M-)'}
+
+select = {'_id':False, 'album': 1, 'ship_price':1, 'final_price':1}
+
+list(inven.find(query,select).limit(5).sort('final_price', -1))
+```
+</details>
+
+<details>
+<summary>Los discos con sleeve_condition Very Good (VG) y precio final entre 10 y 20</summary>
+<br>
+```
+query = {'$and': [{'final_price': {'$gte':10}},
+                 {'final_price': {'$lte':20}},
+                 {'sleeve_condition': 'Very Good (VG)'}]}
+
+select = {'_id':False, 'album': 1, 'final_price':1, 'sleeve_condition':1}
+
+list(inven.find(query,select).limit(5).sort('final_price', -1))
+```
 </details>

@@ -4,6 +4,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 
+
+# La siguiente función nos sirve para obtener el precio durante el scrapeo.
+# Entra el driver y sale una lista de listas, donde los elementos son: price, ship_price y final_price
 def price(driver):
 
     prices = driver.find_elements(By.CLASS_NAME, 'item_price.hide_mobile')
@@ -36,8 +39,9 @@ def price(driver):
 
     return price_description
 
-
-
+# La siguiente función nos sirve para obtener las características del item durante el scrapeo.
+# Entra el driver y sale una lista de listas, donde los elementos son las caracteristicas scrapeadas:
+# (name, album, label, item_condition, sleeve_condition)
 def item(driver):
     
     items = driver.find_elements(By.CLASS_NAME, 'item_description')
@@ -72,7 +76,9 @@ def item(driver):
         
     return item_description
 
-
+# La siguiente función nos sirve para pasar a la siguiente página del scrapeo.
+# Entra un driver y utiliza selenium para scrollear un poco hacia el boton, a continuación espera hasta
+# que el boton de siguiente esta disponible y finalmente hace click para pasar de página.
 def next_page(driver):
 
     driver.execute_script("window.scrollBy(0, 500);")
