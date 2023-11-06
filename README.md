@@ -10,6 +10,7 @@ La compañía [El Ártico Discos](https://www.discogs.com/es/seller/elarticodisc
     2. [El Ártico Discos](#artico)
     3. [Deezer Api](#api)
 2. [Análisis](#analisis)
+    1. [Mongo Query](#mongo)
 
 # 1. Recopilación <a name="recopilacion"></a>
 
@@ -150,7 +151,7 @@ A continuación dejamos el desglose del análisis de los precios.
 
 </details>
 
-#### Mongo Query
+### Mongo Query <a name="mongo"></a>
 A mayores del análisis realizado en el cuarto notebook se ha creado un quinto archivo con algunas queries que nuestro cliente podría utilizar en la nueva base de datos de MongoDB. A continuación se presentan:
 
 <details>
