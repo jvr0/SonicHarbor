@@ -150,13 +150,14 @@ A continuación dejamos el desglose del análisis de los precios.
 
 </details>
 
-##### Mongo Query
+#### Mongo Query
 A mayores del análisis realizado en el cuarto notebook se ha creado un quinto archivo con algunas queries que nuestro cliente podría utilizar en la nueva base de datos de MongoDB. A continuación se presentan:
 
 <details>
 <summary>10 items más caros del inventario con precio final superior a 50</summary>
 <br>
-```
+    
+```python
 query = {'final_price': {'$gte':70}}
 
 select = {'_id':False, 'album': 1, 'final_price':1}
@@ -168,7 +169,8 @@ list(inven.find(query,select).limit(10).sort('final_price', -1))
 <details>
 <summary>Albums a la venta de los beattles ordenados por precio</summary>
 <br>
-```
+    
+```python
 query = {'author': 'The Beatles'}
 
 select = {'_id':False, 'author': 1, 'album':1}
@@ -180,7 +182,8 @@ list(inven.find(query,select).sort('final_price', -1))
 <details>
 <summary>Aquellos articulos sin gasto de envió e item condition near mint, busqueda limitada a los 5 más caros</summary>
 <br>
-```
+    
+```python
 query = {'ship_price': 0,
          'item_condition': 'Near Mint (NM or M-)'}
 
@@ -193,7 +196,8 @@ list(inven.find(query,select).limit(5).sort('final_price', -1))
 <details>
 <summary>Los discos con sleeve_condition Very Good (VG) y precio final entre 10 y 20</summary>
 <br>
-```
+    
+```python
 query = {'$and': [{'final_price': {'$gte':10}},
                  {'final_price': {'$lte':20}},
                  {'sleeve_condition': 'Very Good (VG)'}]}
